@@ -21,6 +21,6 @@ namespace WpfApplication1.Controller
         void SetNewLesson(string[] param);
         void lessonPayment(string param);
         DataTable ShowUnpayedLesson(string id);
-       // void Output(string ex);
+        void Output(string ex);
     }
 }
