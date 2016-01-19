@@ -149,7 +149,8 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                m_controller.Output(ex.Message);
+               // m_controller.Output(ex.Message);
+                throw ex;
             }
 
             finally
