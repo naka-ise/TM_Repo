@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplication1.View.Lessons"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1.View"
+        mc:Ignorable="d"
+        Title="Lessons Area" Height="441" Width="403.5" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="crayons.jpg"/>
+    </Window.Background>
+    <Canvas>
+        <Button Content="Schedule Lessons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" FontFamily="Cooper Black" FontSize="10" Foreground="#FF0E3574" Background="#FFC7D2E4" Click="btn_Clk_sched" Canvas.Left="139" Canvas.Top="70"/>
+        <Button Content="Cancel Lesson" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" FontFamily="Cooper Black" FontSize="10" Foreground="#FF0E3574" Background="#FFC7D2E4" Canvas.Left="139" Canvas.Top="112" />
+        <Button Content="Pay For Lessons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" FontFamily="Cooper Black" FontSize="10" Foreground="#FF0E3574" Background="#FFC7D2E4" Click="btn_Clk_pay" Canvas.Left="139" Canvas.Top="158"/>
+        <Button Content="Enter Lesson" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" FontFamily="Cooper Black" FontSize="10" Foreground="#FF0E3574" Background="#FFC7D2E4" Canvas.Left="139" Canvas.Top="209"/>
+        <Label Content="Lessons Managment" HorizontalAlignment="Center" VerticalAlignment="Top" Height="38" Width="254" FontFamily="Cooper Black" FontSize="24" Foreground="#FF0E3574" Background="{x:Null}" Canvas.Left="74" Canvas.Top="10"/>
+    </Canvas>
+</Window>

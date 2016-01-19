@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApplication1.View.ShowLessons"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1.View"
+        mc:Ignorable="d"
+        Title="Show Lessons" Height="438" Width="444" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="crayons.jpg"/>
+    </Window.Background>
+    <Canvas>
+        <DataGrid x:Name="lessons_table" Canvas.Left="32" Canvas.Top="71" Height="144" Width="372"/>
+        <Button Click="exit" x:Name="btn_exit" Content="Exit" FontFamily="Cooper Black" FontSize="16" Foreground="#FF0E3574" Canvas.Left="190" Canvas.Top="248" Height="28" Width="58"/>
+        <Label Content="Unpaid Lessons:" HorizontalAlignment="Center" VerticalAlignment="Top" Height="56" Width="284" FontFamily="Cooper Black" FontSize="32" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="10"/>
+    </Canvas>
+</Window>

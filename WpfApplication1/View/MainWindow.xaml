@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApplication1.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TeachMe App" Height="703" Width="1383.825" Foreground="#FF0E3574" FontFamily="Cooper Black" WindowState="Maximized" Closing="Window_Closing_1">
+    <Window.Background>
+        <ImageBrush ImageSource="chalkboard.png"/>
+    </Window.Background>
+    <Canvas>
+        <Label Content="Welcome to TeachMe," HorizontalAlignment="Center" FontFamily="Cooper Black" FontSize="30" Width="338" Foreground="#FFFFFFFF" Canvas.Left="567" Canvas.Top="15" Height="47"/>
+        <Label Content="an online app for private tutoring!" FontSize="24" FontFamily="Cooper Black" HorizontalAlignment="Center" Width="434" Foreground="#FFFFFFFF" Canvas.Left="520" Canvas.Top="67" Height="40"/>
+        <Button Content="Students Management" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" FontSize="20" FontFamily="Cooper Black" Background="#FF0E3574" Foreground="#FFFFFFFF" Click="Btn_clk_StudentMng" Canvas.Left="298" Canvas.Top="303" RenderTransformOrigin="-0.673,1.37" Height="36" />
+        <Button Content="Teachers Management" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" FontFamily="Cooper Black" FontSize="20" Background="#FF0E3574" Foreground="#FFFFFFFF" Click="Btn_clk_TeacherMng" Canvas.Left="871" Canvas.Top="303" Height="36"/>
+        <Button Content="Lessons Management" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" FontSize="20" FontFamily="Cooper Black" Background="#FF0E3574" Foreground="#FFFFFFFF" Click="Btn_clk_LessonMng" Canvas.Left="298" Canvas.Top="590" Height="36"/>
+        <Button Content="Assignments Management" HorizontalAlignment="Left" VerticalAlignment="Top" Width="342" FontFamily="Cooper Black" FontSize="20" Background="#FF0E3574" Foreground="#FFFFFFFF" Click="Btn_clk_AssignmentMng" Canvas.Left="871" Canvas.Top="590" Height="36"/>
+        <Image Source="..\View\Images\assignment.jpg" Height="216" Width="380" Canvas.Left="855" Canvas.Top="369" />
+        <Image Source="..\View\Images\lesson.jpg" Height="216" Width="371" Canvas.Left="281" Canvas.Top="360" />
+        <Image Source="..\View\Images\student.jpg" Height="189" Canvas.Left="281" Width="360" Canvas.Top="107"/>
+        <Image Source="..\View\Images\teacher.jpg" Height="198" Width="343" Canvas.Top="107" Canvas.Left="871"/>
+    </Canvas>
+</Window>

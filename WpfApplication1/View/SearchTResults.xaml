@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApplication1.View.SearchTResults"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1.View"
+        mc:Ignorable="d"
+        Title="Search Results" Height="785.164" Width="615.542" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="crayons.jpg"/>
+    </Window.Background>
+    <Canvas>
+        <Label Content="Search Results" HorizontalAlignment="Center" VerticalAlignment="Top" Height="54" Width="271" FontFamily="Cooper Black" FontSize="34" Foreground="#FF0E3574" Canvas.Left="176" Canvas.Top="10"/>
+        <DataGrid Name="dg_results"
+                  DockPanel.Dock="Bottom" Canvas.Left="85" Canvas.Top="69" Height="220" Width="430" />
+        <TextBlock Text="Please insert info to schedule a lesson:" FontFamily="Cooper Black" FontSize="18" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="294" TextDecorations="Underline"/>
+        <TextBlock Text="Teacher's ID:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="326"/>
+        <TextBox x:Name="t_id" Canvas.Left="85" Canvas.Top="344" Width="145"/>
+        <TextBlock Text="Student's ID:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Top="367" Canvas.Left="85"/>
+        <TextBox x:Name="s_id" Canvas.Left="85" Canvas.Top="385" Width="145"/>
+        <TextBlock Text="Select Date:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Left="336" Canvas.Top="326"/>
+        <Calendar Name="MonthCalendar" SelectionMode="SingleDate" Canvas.Left="336" Canvas.Top="344"/>
+        <Button x:Name="btn_date"  Click="check_date" Content="Sync with Google Calendar" FontFamily="Cooper Black" FontSize="14" Foreground="#FF0E3574" Canvas.Top="528" Canvas.Left="324" Width="204" Height="28"/>
+        <TextBlock Text="Hour:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="408"/>
+        <TextBox x:Name="hour" Text="HH:MM" TextAlignment="Center" FontSize="11" Foreground="#FF0E3574" Canvas.Top="426" Canvas.Left="85" Width="145"/>
+        <TextBlock Text="Duration:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="448"/>
+        <TextBox x:Name="duration" Canvas.Left="85" Canvas.Top="466" Width="145" />
+        <Button x:Name="btn_schedule" Click="schedule" Content="Schedule Lesson!" FontFamily="Cooper Black" FontSize="20" Foreground="#FF0E3574" Canvas.Left="196" Canvas.Top="626" Width="202" Height="33"/>
+        <TextBlock Text="Choose Field Of Study:" FontFamily="Cooper Black" FontSize="11" Foreground="#FF0E3574" Canvas.Left="85" Canvas.Top="489"/>
+        <ComboBox x:Name="fields" Canvas.Left="85" Canvas.Top="507" Width="145" FontFamily="Cooper Black" FontSize="9" Foreground="#FF0E3574">
+            <ComboBoxItem Content="Algebra"/>
+            <ComboBoxItem Content="Programming"/>
+            <ComboBoxItem Content="Physics"/>
+            <ComboBoxItem Content="Calculus"/>
+            <ComboBoxItem Content="Design IS Systems"/>
+            <ComboBoxItem Content="Communication Networks"/>
+        </ComboBox>
+    </Canvas>
+</Window>

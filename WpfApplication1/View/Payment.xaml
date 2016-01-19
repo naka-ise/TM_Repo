@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApplication1.View.Payment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1.View"
+        mc:Ignorable="d"
+        Title="Secured Payment" Height="660.276" Width="1114.874" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="chalkboard.png"/>
+    </Window.Background>
+    <Canvas>
+        <Label Content="Easy Payment With TeachMe!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="493" FontFamily="Cooper Black" FontSize="32" Foreground="#FFFFFFFF" Canvas.Left="288"/>
+        <TextBlock Text="Card Holder / Name On Card:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="10" Canvas.Top="56"/>
+        <TextBox x:Name="name" Canvas.Left="10" Canvas.Top="77" Width="175" />
+        <TextBlock Text="Card Number:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="10" Canvas.Top="96"/>
+        <TextBox x:Name="car_num" Text="XXXX-XXXX-XXXX-XXXX" Canvas.Left="10" Canvas.Top="122" Width="175" />
+        <TextBlock Text="Expiration Date:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="13" Canvas.Top="150"/>
+        <ComboBox x:Name="month" Canvas.Left="33" Canvas.Top="181" Width="42">
+            <ComboBoxItem Content="01"/>
+            <ComboBoxItem Content="02"/>
+            <ComboBoxItem Content="03"/>
+            <ComboBoxItem Content="04"/>
+            <ComboBoxItem Content="05"/>
+            <ComboBoxItem Content="06"/>
+            <ComboBoxItem Content="07"/>
+            <ComboBoxItem Content="08"/>
+            <ComboBoxItem Content="09"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+        </ComboBox>
+        <ComboBox x:Name="year" Width="53" Canvas.Left="93" Canvas.Top="181">
+            <ComboBoxItem Content="2017" HorizontalAlignment="Center"/>
+            <ComboBoxItem Content="2018" HorizontalAlignment="Center"/>
+            <ComboBoxItem Content="2019" HorizontalAlignment="Center"/>
+            <ComboBoxItem Content="2020" HorizontalAlignment="Center"/>
+            <ComboBoxItem Content="2021" HorizontalAlignment="Center"/>
+        </ComboBox>
+        <TextBlock Text="CVC2/CVV2:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="10" Canvas.Top="222"/>
+        <Image Source="../View/Images/CVV.png" Height="100" Canvas.Left="10" Canvas.Top="248" Width="175"/>
+        <TextBox x:Name="CVV" Canvas.Left="139" Canvas.Top="222" Width="46" Height="21"/>
+        <Image Source="../View/Images/creditcards.png" Canvas.Top="527" Height="94" Width="361" Canvas.Left="13"/>
+        <TextBlock Text="OR" FontFamily="Cooper Black" FontSize="50" Foreground="#FFFFFFFF" Canvas.Left="264" Canvas.Top="186"/>
+        <TextBlock Text="Pay With PayPal:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="399" Canvas.Top="56"/>
+        <WebBrowser Name="webBrowser" Height="464" Width="652" Canvas.Left="399" Canvas.Top="83"/>
+        <Image Source="../View/Images/paypal.png" Height="69" Canvas.Top="554" Width="242" Canvas.Left="634" />
+        <Button Click="pay" x:Name="btn_pay" Content="Place Payment!" FontFamily="Cooper Black" FontSize="18" Foreground="#FF0E3574" Canvas.Left="10" Canvas.Top="496" Width="219" Height="31"/>
+        <TextBlock Text="Student ID:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="10" Canvas.Top="353"/>
+        <TextBox x:Name="s_id" Canvas.Left="10" Canvas.Top="379" Width="175" />
+        <Button Click="show_lessons" x:Name="lessons" Content="Show Unpaid Lessons" FontFamily="Cooper Black" FontSize="18" Foreground="#FF0E3574" Canvas.Left="10" Canvas.Top="406" RenderTransformOrigin="0.579,2.742" Width="219" Height="31"/>
+        <TextBlock Text="Lesson Number:" FontFamily="Cooper Black" FontSize="18" Foreground="#FFFFFFFF" Canvas.Left="13" Canvas.Top="442"/>
+        <TextBox x:Name="lesson_num" Canvas.Left="12" Canvas.Top="468" Width="173" />
+        <Image Source="../View/Images/secure_payment.png" Height="122" Width="164" Canvas.Left="217" Canvas.Top="374"/>
+    </Canvas>
+</Window>
