@@ -71,5 +71,10 @@ namespace WpfApplication1.Controller
         {
             return m_model.ShowUnpayedLessons(id);
         }
+
+        public void Output(string ex)
+        {
+            m_view.Output(ex);
+        }
     }
 }

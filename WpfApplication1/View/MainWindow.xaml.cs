@@ -20,7 +20,7 @@ namespace WpfApplication1.View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window,IView
     {
         public MyController controller;
         Lessons lesson_window;
@@ -112,7 +112,10 @@ namespace WpfApplication1.View
             this.Visibility = Visibility.Hidden;
         }
 
-        
-        
+
+        public void Output(string ex)
+        {
+            MessageBox.Show(ex);
+        }
     }
 }
