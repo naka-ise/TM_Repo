@@ -8,5 +8,6 @@ namespace WpfApplication1.View
 {
     interface IView
     {
+        void Output(string ex);
     }
 }
