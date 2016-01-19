@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
+using WpfApplication1.Controller;
 
 namespace WpfApplication1.Model
 {
@@ -14,8 +15,13 @@ namespace WpfApplication1.Model
         public static string connection = "Data Source=(LocalDB)\\v11.0;AttachDbFileName=\"C:\\Hallel\\Presonal\\TeachMe\\WpfApplication1\\Model\\TeachMe_DB.mdf\";Integrated Security=True";
         public static SqlConnection SqlCon= new SqlConnection(connection);
         static int LessonID=1;
+        IController m_controller;
 
-
+        public MyModel(IController con)
+        {
+            m_controller = con;
+        }
+        
         public void AddUser(string[] details, string user)
         {
 
@@ -56,7 +62,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally
@@ -65,7 +71,6 @@ namespace WpfApplication1.Model
             }
         }
 
-        
         public void DeleteUser(string[] details, string user)
         {
             try
@@ -92,7 +97,7 @@ namespace WpfApplication1.Model
         
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
         
             finally
@@ -144,7 +149,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally
@@ -189,7 +194,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally
@@ -217,7 +222,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally
@@ -241,7 +246,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally
@@ -269,7 +274,7 @@ namespace WpfApplication1.Model
 
             catch (Exception ex)
             {
-                throw ex;
+                m_controller.Output(ex.Message);
             }
 
             finally

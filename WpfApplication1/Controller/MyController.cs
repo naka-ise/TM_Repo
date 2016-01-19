@@ -76,5 +76,10 @@ namespace WpfApplication1.Controller
         {
             m_view.Output(ex);
         }
+
+        internal void SetView(MainWindow mainWindow)
+        {
+            m_view = mainWindow;
+        }
     }
 }

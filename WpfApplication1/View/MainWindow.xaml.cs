@@ -29,12 +29,14 @@ namespace WpfApplication1.View
         Students student_window;
 
         IModel model;
+        IView view;
 
         public MainWindow()
         {
             InitializeComponent();
             controller = new MyController();
-            model = new MyModel();
+            model = new MyModel(controller);
+            controller.SetView(this);
             controller.SetModel(model);
             lesson_window = new Lessons();
             teacher_window = new Teachers();
