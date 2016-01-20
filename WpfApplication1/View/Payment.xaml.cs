@@ -70,7 +70,7 @@ namespace WpfApplication1.View
             bool isNum;
             foreach (string s in cardArr)
             {
-                isNum = Int32.TryParse(car_num.Text, out num);
+                isNum = Int32.TryParse(s, out num);
                 if (!isNum)
                 {
                     MessageBox.Show("Card number isn't valid");
