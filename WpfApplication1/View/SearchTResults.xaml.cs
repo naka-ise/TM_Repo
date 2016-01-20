@@ -72,11 +72,44 @@ namespace WpfApplication1.View
 
         private void schedule(object sender, RoutedEventArgs e)
         {
+            int num = 0;
+            bool isNum = Int32.TryParse(t_id.Text, out num);
+            if (t_id.Text == null || t_id.Text.Length != 9 || !isNum)
+            {
+                MessageBox.Show("ID couldn't be empty, longer then 9 characters or not a number!");
+                return;
+            }
             m_TeacherId = t_id.Text;
+            isNum = Int32.TryParse(s_id.Text, out num);
+            if (s_id.Text == null || s_id.Text.Length != 9 || !isNum)
+            {
+                MessageBox.Show("ID couldn't be empty, longer then 9 characters or not a number!");
+                return;
+            }
             m_StudentId = s_id.Text;
+            if (fields.Text == null || fields.Text.Length < 1)
+            {
+                MessageBox.Show("Please choose a field of study");
+                return;
+            }
             m_Field = fields.Text;
             m_Date = MonthCalendar.SelectedDate.ToString();
+            string[] hArr = hour.Text.Split(':');
+            bool is1, is2;
+            is1 = Int32.TryParse(hArr[0], out num);
+            is2 = Int32.TryParse(hArr[1], out num);
+            if (!is1 || !is2 || hour.Text.Length > 10 || hour.Text.Length < 1)
+            {
+                MessageBox.Show("Please enter a valid time");
+                return;
+            }
             m_Hour = hour.Text;
+            isNum = Int32.TryParse(duration.Text, out num);
+            if (!isNum || duration.Text.Length < 1)
+            {
+                MessageBox.Show("Please enter a valid duration (integer)");
+                return;
+            }
             m_Duration = duration.Text;
             scheduleWindowChanged();
         }

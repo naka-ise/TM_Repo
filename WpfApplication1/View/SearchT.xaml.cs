@@ -49,8 +49,25 @@ namespace WpfApplication1.View
 
         private void buttn_search(object sender, RoutedEventArgs e)
         {
+            if (fields.Text == null || fields.Text.Length < 1)
+            {
+                MessageBox.Show("Please choose a field of study");
+                return;
+            }
             m_Fields = fields.Text;
+            if (city.Text == null || city.Text.Length < 1 || city.Text.Length > 50)
+            {
+                MessageBox.Show("Please enter a valid city");
+                return;
+            }
             m_City = city.Text;
+            int num = 0;
+            bool isNum = Int32.TryParse(max_price.Text, out num);
+            if (!isNum || max_price.Text == null || max_price.Text.Length < 1)
+            {
+                MessageBox.Show("Please enter a valid price");
+                return;
+            }
             m_MaxPrice = max_price.Text;
             SearchWindowChanged();
 

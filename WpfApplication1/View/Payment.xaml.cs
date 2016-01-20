@@ -47,12 +47,54 @@ namespace WpfApplication1.View
 
         private void show_lessons(object sender, RoutedEventArgs e)
         {
+            int num = 0;
+            bool isNum = Int32.TryParse(s_id.Text, out num);
+            if (!isNum || s_id.Text.Length != 9)
+            {
+                MessageBox.Show("ID couldn't be empty, longer then 9 characters or not a number!");
+                return;
+            }
             m_Id = s_id.Text;
             PaymentShowLessonsChanged();
         }
 
         private void pay(object sender, RoutedEventArgs e)
         {
+            if (name.Text == null || name.Text.Length < 1)
+            {
+                MessageBox.Show("Please enter a valid name");
+                return;
+            }
+            string[] cardArr = car_num.Text.Split('-');
+            int num = 0;
+            bool isNum;
+            foreach (string s in cardArr)
+            {
+                isNum = Int32.TryParse(car_num.Text, out num);
+                if (!isNum)
+                {
+                    MessageBox.Show("Card number isn't valid");
+                    return;
+                }
+
+            }
+            if (month.Text == null || month.Text.Length < 1)
+            {
+                MessageBox.Show("Please choose a valid expiration date");
+                return;
+            }
+            isNum = Int32.TryParse(lesson_num.Text, out num);
+            if (lesson_num == null || lesson_num.Text.Length < 1)
+            {
+                MessageBox.Show("Lesson number couldn't be empty or not a number!");
+                return;
+            }
+            isNum = Int32.TryParse(CVV.Text, out num);
+            if (CVV.Text == null || !isNum || CVV.Text.Length < 1)
+            {
+                MessageBox.Show("Please enter a valid CVV number");
+                return;
+            }
             m_LessonNum = lesson_num.Text;
             PaymentPayLessonsChanged();
         }

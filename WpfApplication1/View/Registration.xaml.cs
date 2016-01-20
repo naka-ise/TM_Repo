@@ -78,13 +78,56 @@ namespace WpfApplication1.View
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
+            if (first_name.Text == null || first_name.Text.Length > 50 || first_name.Text.Length < 1)
+            {
+                MessageBox.Show("First name couldn't be empty or longer then 50 characters!");
+                return;
+            }
             m_Fname = first_name.Text;
+            if (last_name.Text == null || last_name.Text.Length > 50 || last_name.Text.Length < 1)
+            {
+                MessageBox.Show("Last name couldn't be empty or longer then 50 characters!");
+                return;
+            }
             m_Lname = last_name.Text;
+            int num = 0;
+            bool isNum = Int32.TryParse(id.Text, out num);
+            if (!isNum || id.Text.Length != 9)
+            {
+                MessageBox.Show("ID couldn't be empty, longer then 9 characters or not a number!");
+                return;
+            }
             m_Id = id.Text;
+            if (city.Text == null || city.Text.Length > 50 || city.Text.Length < 1)
+            {
+                MessageBox.Show("City couldn't be empty or longer then 50 characters!");
+                return;
+            }
             m_City = city.Text;
+            isNum = Int32.TryParse(phone.Text, out num);
+            if (!isNum || phone.Text == null || phone.Text.Length > 50 || phone.Text.Length < 1)
+            {
+                MessageBox.Show("Phone couldn't be empty, longer then 50 characters or not a number!");
+                return;
+            }
             m_Phone = phone.Text;
+            if (!mail.Text.Contains('@') || !mail.Text.Contains('.') || mail.Text == null || mail.Text.Length > 50 || mail.Text.Length < 10)
+            {
+                MessageBox.Show("Email couldn't be empty, longer then 50 characters and has to be from the form: 'a@b.com' !");
+                return;
+            }
             m_Email = mail.Text;
+            if (degree.Text.Length > 50)
+            {
+                MessageBox.Show("Academic Degree couldn't be longer then 50 characters!");
+                return;
+            }
             m_AcademicDegree = degree.Text;
+            if (user_type.Text == null || user_type.Text.Length < 1)
+            {
+                MessageBox.Show("You must choose user type - student or teacher!");
+                return;
+            }
             m_UserType = user_type.Text;
             RegisterWindowChanged();
             this.Visibility = Visibility.Hidden;

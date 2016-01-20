@@ -22,6 +22,19 @@ namespace WpfApplication1.View
         Registration reg_window;
         MainWindow main_window;
 
+        private string m_userNum;
+        public string _userName
+        {
+            get { return _userName; }
+            set { m_userNum = _userName; }
+        }
+        private string m_pwd;
+        public string _pwd
+        {
+            get { return m_pwd; }
+            set { m_pwd = _pwd; }
+        }
+
         public LogIn()
         {
             InitializeComponent();
@@ -32,8 +45,14 @@ namespace WpfApplication1.View
 
         private void buttn_signIn(object sender, RoutedEventArgs e)
         {
+            if (user_name.Text.Length < 1 || password.Password.Length < 1)
+            {
+                MessageBox.Show("Please insert a user name and correct password!");
+                return;
+            }
             main_window.ShowDialog();
         }
+
         private void buttn_register(object sender, RoutedEventArgs e)
         {
             reg_window.ShowDialog();
